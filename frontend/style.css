@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --beige: #eef5dbff;
+  --light-blue: #b8d8d8ff;
+  --taupe-gray: #847e89;
+  --federal-blue: #140d4f;
+  --coral: #fa824c;
+}
+
+.outfit-regular {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.outfit-bold {
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.loader {
+  width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--coral);
+  --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+  mask: var(--_m);
+  -webkit-mask-composite: source-out;
+  mask-composite: subtract;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+#map {
+  height: 100vh;
+  flex-grow: 1;
+}
+
+.info {
+  width: 400px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  align-items: center;
+  background-color: var(--beige);
+}
+
+.pronosticoContainer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  overflow: scroll;
+  row-gap: 12px;
+}
+
+.pronostico {
+  width: 300px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background-color: var(--light-blue);
+}
+
+.pronostico .data {
+  display: flex;
+  width: 100%;
+}
+.pronostico .data .icon {
+  width: 150px;
+  height: 150px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.icon.sun {
+  background-image: url("icons/day.svg");
+  background-size: 250px 250px;
+}
+.icon.cloud {
+  background-image: url("icons/cloudy.svg");
+  background-size: 200px 200px;
+}
+.icon.snow {
+  background-image: url("icons/snowy-6.svg");
+  background-size: 200px 200px;
+}
+.icon.rain {
+  background-image: url("icons/rainy-5.svg");
+  background-size: 200px 200px;
+}
+
+.pronostico .data .icon img {
+  width: 150px;
+  height: 150px;
+}
+
+.pronostico .data .numbers {
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.pronostico .data .numbers div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 12px;
+}
+
+.pronostico .data .numbers div svg {
+  width: 24px;
+  height: 24px;
+  overflow: visible;
+}
